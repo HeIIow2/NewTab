@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>NewTab</title>
+
+    <!--css and fonts-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/overlay.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <!--js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="js/search.js"></script>
+    <script src="js/individual.js"></script>
+
+</head>
+<body onload="manage_cookies();onload()">
+
+<img src="assets/img/catgirl.png" alt="cute catgirl" id="popup-catgirl">
+
+
+<section id="search">
+    <div class="vertical-center text-center d-flex flex-column">
+        <h1 id="title" class="">Vanitas</h1>
+
+        <div class="container">
+            <form class="form-inline row" role="form" method="post" autocomplete="off" onsubmit="search_in_web();">
+                <div class="input-group">
+                    <div class="form-group" style="flex-grow: 2">
+                        <input class="form-control shadow-none text-light bg-dark" id="query-elem" type="text" placeholder="search">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control shadow-none text-light bg-dark" id="engine-elem" name="category">
+	                        <option value="0">Duck Duck Go</option>
+                            <option value="6">Yandex</option>
+                            <option value="7">Brave</option>
+			                <option value="1">Google</option>
+                            <option value="2">You Tube</option>
+                            <option value="3">Rule 34</option>
+                            <option value="4">Bing</option>
+                            <option value="5">Yahoo</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script src="js/navbar.js"></script>
+<div id="copyright">©Hellow2</div>
+</body>
+</html>

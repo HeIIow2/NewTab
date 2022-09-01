@@ -1,0 +1,12 @@
+#popup-catgirl {
+    position: fixed;
+
+    bottom: 0;
+    right: 0;
+
+    height: 300px;
+
+    transform: translateY(300px);
+    transition: transform 1s;
+    pointer-events: none;
+}
