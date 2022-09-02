@@ -1,9 +1,12 @@
+
+
+
 function random(min, max) {
     return Math.floor(Math.random() * max) + min;
 }
 
 let catgirl_is_visible = false;
-let catgirl_element = null;
+let catgirl_element;
 
 function show_catgirl() {
     catgirl_element.style.transform = "translateY(0)";
@@ -26,9 +29,14 @@ function onload() {
 
 
 let dde = document.documentElement;
+
 dde.addEventListener("mousemove", e => {
+    parallax(e);
+});
+
+function parallax(e) {
     let ow = dde.offsetWidth;
     let oh = dde.offsetHeight;
     dde.style.setProperty('--mouseX', e.clientX * 10 / ow + "%");
     dde.style.setProperty('--mouseY', e.clientY * 10 / oh + "%");
-});
+}
