@@ -1,47 +1,23 @@
+:root {
+    --input-side-margin: 7em;
+    --input-height: 2.5em;
+    --element-distance: 0.5em;
+}
+
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-}
 
-section {
     min-height: 100vh;
     width: 100%;
-}
 
-.vertical-center {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-}
-
-* {
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    border-radius: 0 !important;
-}
-
-
-#search {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/downwards.jpg") no-repeat scroll center;
     background-size: cover;
 }
 
-section div .container {
-    margin-top: 10vh;
-}
-
-#title {
-    margin-top: 20vh;
-
-    font-size: 4.5em;
-    color: white;
-    mix-blend-mode: difference;
-
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+* {
+    box-sizing: border-box;
 }
 
 #copyright {
@@ -54,3 +30,104 @@ section div .container {
     mix-blend-mode: difference;
     pointer-events: none;
 }
+
+
+#title {
+    display:inline-block;
+    width: 100%;
+    margin-top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+
+    font-size: 4.5em;
+    mix-blend-mode: difference;
+    opacity: 0.5;
+
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.input-wrapper {
+    margin: 0 var(--input-side-margin) 0 var(--input-side-margin);
+}
+
+#search-form {
+    position: static;
+    width: 100%;
+    height: var(--input-height);
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+#query-elem-color {
+    mix-blend-mode: overlay;
+    isolation: isolate;
+    border-radius: calc(var(--input-height) / 2);
+    pointer-events : none;
+
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#query-elem {
+    grid-column: 1;
+    grid-row: 1;
+
+    color: #ccc;
+
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+
+    border-radius: calc(var(--input-height) / 2);
+    background: none;
+    border: none;
+    outline: rgba(255,255,255,0.4) solid 1px !important;
+}
+
+
+#engine-elem {
+    margin-left: var(--element-distance);
+    grid-column: 2;
+    grid-row: 1;
+    --max-height-val: 1000%;
+    position: relative;
+    width: var(--input-height);
+    height: var(--max-height-val);
+
+    transition: max-height 0.2s;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+#engine-elem:hover{
+    max-height: var(--max-height-val);
+}
+
+#engine-elem .option {
+    position: relative;
+    height: var(--input-height);
+    width: 100%;
+    margin-bottom: var(--element-distance);
+
+    opacity: 0.8;
+    filter: saturate(40%);
+
+    text-align: center;
+    background: center no-repeat;
+    background-size: contain;
+}
+
+#duck-duck-go {background-image: url("../assets/logos/duck_duck_go.svg")!important;}
+#yandex {background-image: url("../assets/logos/yandex.svg")!important;}
+#brave {background-image: url("../assets/logos/brave.svg")!important;}
+#google {background-image: url("../assets/logos/google.svg")!important;}
+#youtube {background-image: url("../assets/logos/youtube.svg")!important;}
+#rule34 {background-image: url("../assets/logos/rule34.png")!important;}
+#bing {background-image: url("../assets/logos/bing.svg")!important;}
+#yahoo {background-image: url("../assets/logos/yahoo.svg")!important;}

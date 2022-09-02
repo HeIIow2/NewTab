@@ -34,5 +34,3 @@ function show_catgirl() {
         catgirl_elem.style.transform = "translateY(300px)";
     }, 10000);
 }
-
-window.addEventListener('DOMContentLoaded', event => {onload()});

@@ -8,54 +8,45 @@
     <!--css and fonts-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overlay.css">
+
+    <!--
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">-->
 
     <!--js-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>-->
 
-    <script src="js/search.js"></script>
     <script src="js/individual.js"></script>
 
 </head>
-<body onload="manage_cookies();onload()">
+<body onload="onload()">
 
-<img src="assets/img/catgirl.png" alt="cute catgirl" id="popup-catgirl">
+<h1 id="title" class="vertical-center">Vanitas</h1>
 
 
-<section id="search">
-    <div class="vertical-center text-center d-flex flex-column">
-        <h1 id="title" class="">Vanitas</h1>
-
-        <div class="container">
-            <form class="form-inline row" role="form" method="post" autocomplete="off" onsubmit="search_in_web();">
-                <div class="input-group">
-                    <div class="form-group" style="flex-grow: 2">
-                        <input class="form-control shadow-none text-light bg-dark" id="query-elem" type="text" placeholder="search">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control shadow-none text-light bg-dark" id="engine-elem" name="category">
-	                        <option value="0">Duck Duck Go</option>
-                            <option value="6">Yandex</option>
-                            <option value="7">Brave</option>
-			                <option value="1">Google</option>
-                            <option value="2">You Tube</option>
-                            <option value="3">Rule 34</option>
-                            <option value="4">Bing</option>
-                            <option value="5">Yahoo</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
+<div class="input-wrapper">
+    <form id="search-form" role="form" method="post" autocomplete="off" onsubmit="search_in_web();">
+        <input id="query-elem-color" type="text">
+        <input id="query-elem" type="text" placeholder="search">
+        <!--<div id="query-elem-shadow">Hello World</div>-->
+        <div id="engine-elem" value="duck-duck-go">
+            <div class="option" id="duck-duck-go"></div>
+            <div class="option" id="yandex"></div>
+            <div class="option" id="brave"></div>
+            <div class="option" id="google"></div>
+            <div class="option" id="youtube"></div>
+            <div class="option" id="rule34"></div>
+            <div class="option" id="bing"></div>
+            <div class="option" id="yahoo"></div>
         </div>
-    </div>
-</section>
+    </form>
+</div>
 
-
-<script src="js/navbar.js"></script>
+<script src="js/search.js"></script>
+<script src="js/choose_search_engine.js"></script>
+<img src="assets/img/catgirl.png" alt="cute catgirl" id="popup-catgirl">
 <div id="copyright">©Hellow2</div>
 </body>
 </html>
