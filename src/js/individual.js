@@ -2,35 +2,24 @@ function random(min, max) {
     return Math.floor(Math.random() * max) + min;
 }
 
-function onload() {
-    const catgirl_elem = document.getElementById("popup-catgirl");
-
-    let catgirl_is_visible = false;
-
-
-    randomly_catgirl();
-    function toggle_catgirl() {
-        if (catgirl_is_visible) {
-            catgirl_elem.style.transform = "translateY(300px)";
-            catgirl_is_visible = false;
-        } else {
-            catgirl_elem.style.transform = "translateY(0)";
-            catgirl_is_visible = true;
-        }
-    }
-
-    function randomly_catgirl() {
-        toggle_catgirl()
-        setTimeout(randomly_catgirl, random(1000, 10000));
-    }
-}
+let catgirl_is_visible = false;
+let catgirl_element = null;
 
 function show_catgirl() {
-    const catgirl_elem = document.getElementById("popup-catgirl");
+    catgirl_element.style.transform = "translateY(0)";
+    catgirl_is_visible = true;
 
-    catgirl_elem.style.transform = "translateY(0)";
+    setTimeout(hide_catgirl, random(1000, 10000));
+}
 
-    setTimeout(function () {
-        catgirl_elem.style.transform = "translateY(300px)";
-    }, 10000);
+function hide_catgirl() {
+    catgirl_element.style.transform = "translateY(300px)";
+    catgirl_is_visible = false;
+
+    setTimeout(show_catgirl, random(10000, 100000));
+}
+
+function onload() {
+    catgirl_element = document.getElementById("popup-catgirl");
+    setTimeout(show_catgirl, random(10000, 100000));
 }

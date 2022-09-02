@@ -1,12 +1,26 @@
 #popup-catgirl {
+    --cat-height: 150px;
+
     position: fixed;
+    opacity: 0.4;
 
     bottom: 0;
-    right: 0;
+    left: 20px;
 
-    height: 300px;
+    height: var(--cat-height);
 
-    transform: translateY(300px);
+    transform: translateY(var(--cat-height));
     transition: transform 1s;
+    pointer-events: none;
+}
+
+#copyright {
+    position: fixed;
+    bottom: 2px;
+    right: 2px;
+
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    mix-blend-mode: difference;
     pointer-events: none;
 }

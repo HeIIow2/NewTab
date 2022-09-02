@@ -20,17 +20,6 @@ body {
     box-sizing: border-box;
 }
 
-#copyright {
-    position: fixed;
-    bottom: 2px;
-    left: 2px;
-
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.5);
-    mix-blend-mode: difference;
-    pointer-events: none;
-}
-
 
 #title {
     display:inline-block;
