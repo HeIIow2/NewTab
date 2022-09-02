@@ -1,5 +1,25 @@
-touch /usr/lib/firefox/defaults/pref/autoconfig.js
-echo '//\npref("general.config.filename", "autoconfig.cfg");\npref("general.config.obscure_value", 0);\npref("general.config.sandbox_enabled", false);' > /usr/lib/firefox/defaults/pref/autoconfig.js
+new_tab_url="ln.topdf.de/newNewTab/"
 
-touch /usr/lib/firefox/autoconfig.cfg
-echo '//\nvar {classes:Cc,interfaces:Ci,utils:Cu} = Components;  \n  \n/* set new tab page */  \ntry {  \n  Cu.import("resource:///modules/AboutNewTab.jsm");  \n  var newTabURL = "ln.topdf.de/newNewTab/";  \n  AboutNewTab.newTabURL = newTabURL;  \n} catch(e){Cu.reportError(e);} // report errors in the Browser Console  ' > /usr/lib/firefox/autoconfig.cfg
+js="/usr/lib/firefox/defaults/pref/autoconfig.js"
+cfg="/usr/lib/firefox/autoconfig.cfg"
+
+touch $js
+cat >$js <<EOL
+//
+pref("general.config.filename", "autoconfig.cfg");
+pref("general.config.obscure_value", 0);
+pref("general.config.sandbox_enabled", false);
+EOL
+
+touch $cfg
+cat >$cfg <<EOL
+//
+var {classes:Cc,interfaces:Ci,utils:Cu} = Components;
+
+/* set new tab page */
+try {
+  Cu.import("resource:///modules/AboutNewTab.jsm");
+  var newTabURL = ${new_tab_url};
+  AboutNewTab.newTabURL = newTabURL;
+} catch(e){Cu.reportError(e);} // report errors in the Browser Console
+EOL
