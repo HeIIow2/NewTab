@@ -23,3 +23,12 @@ function onload() {
     catgirl_element = document.getElementById("popup-catgirl");
     setTimeout(show_catgirl, random(10000, 100000));
 }
+
+
+let dde = document.documentElement;
+dde.addEventListener("mousemove", e => {
+    let ow = dde.offsetWidth;
+    let oh = dde.offsetHeight;
+    dde.style.setProperty('--mouseX', e.clientX * 10 / ow + "%");
+    dde.style.setProperty('--mouseY', e.clientY * 10 / oh + "%");
+});

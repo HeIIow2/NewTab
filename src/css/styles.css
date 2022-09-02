@@ -2,6 +2,9 @@
     --input-side-margin: 7em;
     --input-height: 2.5em;
     --element-distance: 0.5em;
+
+    --mouseX: 50%;
+    --mouseY: 50%;
 }
 
 @media only screen and (max-width: 550px){
@@ -32,6 +35,8 @@ body {
 
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/downwards.jpg") no-repeat scroll center;
     background-size: cover;
+    background-size: 105%;
+    background-position: var(--mouseX) var(--mouseY);
 }
 
 * {
