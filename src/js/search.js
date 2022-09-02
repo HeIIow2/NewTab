@@ -1,8 +1,31 @@
+const form_elem = document.getElementById("search-form");
 const query_element = document.getElementById("query-elem");
-const engine_element = document.getElementById("engine-elem");
+const all_options_elem = document.getElementById("engine-elem");
+const option_elements = all_options_elem.getElementsByClassName("option");
 
 
-function search_in_web() {
+
+// add event listeners
+form_elem.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+        submit();
+    }
+});
+for (const option of option_elements) {
+    option.addEventListener("click", clicked_option);
+}
+
+// if another search engine is chosen
+function clicked_option(option) {
+    const object = option.target
+    const clicked_id = object.getAttribute("id");
+    all_options_elem.setAttribute("value", clicked_id)
+    // move the clicked element to the top of all children
+    all_options_elem.insertBefore(object, all_options_elem.firstChild);
+}
+
+// if form got submitted
+function submit() {
     const hentai_tag_regex = new RegExp("\\d{6}");
     const url_regex = new RegExp('^(https?:\\/\\/)?'+ // protocol
         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
@@ -12,7 +35,7 @@ function search_in_web() {
         '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
 
     const search_query = query_element.value;
-    const search_engine = engine_element.getAttribute("value");
+    const search_engine = all_options_elem.getAttribute("value");
 
     if (search_query.match(url_regex)) {
         go_to(search_query)
