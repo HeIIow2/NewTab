@@ -112,6 +112,11 @@ body {
     background-size: contain;
 }
 
+#engine-elem .option:first-child, #engine-elem .option:hover {
+    filter: saturate(1) !important;
+    opacity: 1;
+}
+
 #duck-duck-go {background-image: url("../assets/logos/duck_duck_go.svg")!important;}
 #yandex {background-image: url("../assets/logos/yandex.svg")!important;}
 #brave {background-image: url("../assets/logos/brave.svg")!important;}
