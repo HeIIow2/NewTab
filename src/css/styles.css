@@ -4,6 +4,24 @@
     --element-distance: 0.5em;
 }
 
+@media only screen and (max-width: 550px){
+    :root {
+        --input-side-margin: 1em;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    :root {
+        --input-side-margin: 15em;
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    :root {
+        --input-side-margin: 25em;
+    }
+}
+
 
 body {
     margin: 0;
