@@ -1,0 +1,88 @@
+:root {
+    --card-position: 50%;
+    --card-height: 230px;
+    --card-width: 150px;
+    --card-gap: 20px;
+}
+
+#register-wrapper {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: var(--card-position);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--card-gap);
+}
+
+.card-wrapper {
+    width: var(--card-width);
+    height: var(--card-height);
+    display: grid;
+
+    overflow: hidden;
+
+    --width: 100%;
+    --height: 100%;
+    border-radius: 10px;
+
+    text-decoration: none !important;
+}
+
+.card-wrapper > * {
+    grid-row: 1;
+    grid-column: 1;
+    width: var(--width);
+    height: var(--height);
+    margin: auto;
+
+    border-radius: 10px;
+}
+
+.card-bg {
+    background: white;
+    mix-blend-mode: overlay;
+}
+
+.card {
+    border: #cccccc 1px solid;
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h1 {
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+    font-size: 100%;
+    border-bottom: #cccccc 1px solid;
+}
+
+.card .card-img {
+    width: 100%;
+    height: 100%;
+    flex-grow: 10 !important;
+    opacity: 100%;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+#Neko-img {
+    background: url("../assets/img/catgirl.png");
+    background-size: cover !important;
+}
+#physics-img  {
+    background: url("https://ln.topdf.de/physik/assets/circuit3.svg");
+    filter: invert(100%);
+    background-size: contain !important;
+}
+#chemistry-img{
+    background: url("https://ln.topdf.de/chemie/assets/logo.ico");
+    background-size: contain !important;
+}

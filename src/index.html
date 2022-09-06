@@ -8,11 +8,14 @@
     <!--css and fonts-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/overlay.css">
+    <link rel="stylesheet" href="css/programms.css">
 
     <script src="js/individual.js"></script>
 
 </head>
 <body onload="onload()">
+<div id="background">
+</div>
 
 <h1 id="title" class="vertical-center">Vanitas</h1>
 
@@ -21,7 +24,6 @@
     <form id="search-form" role="form" method="post" autocomplete="off">
         <input id="query-elem-color" type="text">
         <input id="query-elem" type="text" placeholder="search">
-        <!--<div id="query-elem-shadow">Hello World</div>-->
         <div id="engine-elem" value="duck-duck-go">
             <div class="option" id="duck-duck-go"></div>
             <div class="option" id="yandex"></div>
@@ -37,10 +39,53 @@
 
 <script src="js/search.js"></script>
 
+<div id="register-wrapper">
+    <!--
+    <div class="card-wrapper">
+        <div class="card">
+        </div>
+        <div class="card-bg"></div>
+    </div>
+    -->
+
+    <a class="card-wrapper" href="https://ln.topdf.de/indexx/">
+        <div class="card">
+            <h1>All Projects</h1>
+        </div>
+        <div class="card-bg"></div>
+    </a>
+
+
+    <a class="card-wrapper" href="https://ln.topdf.de/hellowNekoNew/">
+        <div class="card">
+            <h1>Hello Neko</h1>
+            <div class="card-img" id="Neko-img"></div>
+        </div>
+        <div class="card-bg"></div>
+    </a>
+
+    <a class="card-wrapper" href="https://ln.topdf.de/physik/">
+        <div class="card">
+            <h1>Physik</h1>
+            <div class="card-img" id="physics-img"></div>
+        </div>
+        <div class="card-bg"></div>
+    </a>
+
+    <a class="card-wrapper" href="https://ln.topdf.de/chemie/">
+        <div class="card">
+            <h1>Chemie</h1>
+            <div class="card-img" id="chemistry-img"></div>
+        </div>
+        <div class="card-bg"></div>
+    </a>
+</div>
+
 <img src="assets/img/catgirl1.png" alt="cute catgirl" id="popup-catgirl">
 <div id="copyright">©Hellow2</div>
 <canvas id="particle-canvas"></canvas>
 
 <script src="js/particles.js"></script>
+
 </body>
 </html>

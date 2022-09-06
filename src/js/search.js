@@ -6,9 +6,14 @@ const option_elements = all_options_elem.getElementsByClassName("option");
 
 
 // add event listeners
-form_elem.addEventListener("keypress", function (e) {
+form_elem.addEventListener("keydown", function (e) {
+    console.log(e.key)
     if (e.key === 'Enter') {
         submit();
+    } else if (e.key === 'ArrowUp') {
+        set_engine(all_options_elem.lastElementChild);
+    } else if (e.key === 'ArrowDown') {
+        set_engine(all_options_elem.children[1], true);
     }
 });
 for (const option of option_elements) {
@@ -18,10 +23,19 @@ for (const option of option_elements) {
 // if another search engine is chosen
 function clicked_option(option) {
     const object = option.target
+    set_engine(object);
+}
+
+function set_engine(object, first_to_last = false) {
+    console.log(object)
     const clicked_id = object.getAttribute("id");
     all_options_elem.setAttribute("value", clicked_id)
     // move the clicked element to the top of all children
     all_options_elem.insertBefore(object, all_options_elem.firstChild);
+
+    if (first_to_last) {
+        all_options_elem.appendChild(all_options_elem.children[1]);
+    }
 }
 
 // if form got submitted
