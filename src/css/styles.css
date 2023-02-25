@@ -118,6 +118,11 @@ body {
     outline: rgba(255,255,255,0.4) solid 1px !important;
 }
 
+#query-elem::placeholder {
+    color: white;
+    opacity: .7;
+}
+
 
 #engine-elem {
     --max-height-val: 900%;

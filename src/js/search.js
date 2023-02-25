@@ -31,7 +31,8 @@ function set_engine(object, first_to_last = false) {
     const clicked_id = object.getAttribute("id");
     console.log("Setting search engine to: " + clicked_id);
 
-    all_options_elem.setAttribute("value", clicked_id)
+    all_options_elem.setAttribute("value", clicked_id);
+    query_element.placeholder = "search on " + clicked_id;
 
     // set the cookie to the engine.
     document.cookie = LAST_USED_COOKIE_NAME + "=" + clicked_id;
