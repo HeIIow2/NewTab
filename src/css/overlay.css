@@ -25,6 +25,17 @@
     pointer-events: none;
 }
 
+#engine-bang {
+    position: fixed;
+    top: 2px;
+    right: 2px;
+
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
 #particle-canvas {
     position: fixed;
     width: 100vw;
