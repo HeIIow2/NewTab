@@ -1,3 +1,7 @@
+:root {
+    --padding: 5px;
+}
+
 #popup-catgirl {
     --cat-height: 150px;
 
@@ -19,6 +23,8 @@
     bottom: 2px;
     right: 2px;
 
+    padding: var(--padding);
+
     font-size: 1em;
     color: rgba(255, 255, 255, 0.5);
     mix-blend-mode: difference;
@@ -29,6 +35,8 @@
     position: fixed;
     top: 2px;
     right: 2px;
+
+    padding: var(--padding);
 
     font-size: 1em;
     color: rgba(255, 255, 255, 0.5);
